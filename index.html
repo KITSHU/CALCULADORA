@@ -13,48 +13,70 @@
 <body>
     <div id="calculator">
     <div id="display">
-        <div id="last-calc">1 + 1</div>
+        <div id="lastcalc"></div>
         <div id="result">
             <img src="./assets/equals.svg" alt="sinal de igual">
-            <span>2</span>
+            <span id="numero"></span>
         </div>
     </div>
     <div id="keyboard">
-        <button class="secondary">CE</button>
-        <button>C</button>
+        <button class="secondary" onclick="clean()">CE</button>
+        <button onclick="back()">C</button>
         <button>
             <img src="./assets/percent.svg" alt="">
         </button>
-        <button class="tertiary">
+        <button class="tertiary" onclick="insert('/')">
             <img src="./assets/divide.svg" alt="">
         </button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button class="tertiary">
+        <button onclick="insert('7')">7</button>
+        <button onclick="insert('8')">8</button>
+        <button onclick="insert('9')">9</button>
+        <button class="tertiary" onclick="insert('*')">
             <img src="./assets/X.svg" alt="">
         </button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button class="tertiary">
+        <button onclick="insert('4')">4</button>
+        <button onclick="insert('5')">5</button>
+        <button onclick="insert('6')">6</button>
+        <button class="tertiary" onclick="insert('-')">
             <img src="./assets/minus.svg" alt="">
         </button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button class="tertiary">
+        <button onclick="insert('1')">1</button>
+        <button onclick="insert('2')">2</button>
+        <button onclick="insert('3')">3</button>
+        <button class="tertiary" onclick="insert('+')">
             <img src="./assets/plus.svg" alt="">
         </button>
         <button>
             <img src="./assets/plusminus.svg" alt="">
         </button>
-        <button>0</button>
-        <button>,</button>
-        <button class="quartiary">
+        <button onclick="insert('0')">0</button>
+        <button onclick="insert(',')">,</button>
+        <button class="quartiary" onclick="calcular()">
             <img src="./assets/equalsw.svg" alt="">
         </button>
     </div>
     </div>
+    <script>
+        function insert(num){
+            var numero = document.getElementById('lastcalc').innerHTML;
+            document.getElementById('lastcalc').innerHTML = numero + num;
+        }
+        function clean(){
+            document.getElementById('lastcalc').innerHTML = "";
+        }
+        function back(){
+            var lastcalc = document.getElementById('lastcalc').innerHTML;
+            document.getElementById('lastcalc').innerHTML = lastcalc.substring(0, lastcalc.length -1)
+        }
+        function calcular(){
+            var lastcalc = document.getElementById('lastcalc').innerHTML;
+            if(lastcalc){
+                document.getElementById('numero').innerHTML = eval(numero)
+            }
+            else{
+                document.getElementById('lastcalc').innerHTML = "Nada para calcular"
+            }
+        }
+    </script>
 </body>
 </html>

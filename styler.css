@@ -32,7 +32,7 @@ body * {
     padding-inline: 54px;
 }
 
-#last-calc{
+#lastcalc{
     text-align: right;
     font-size: 20px;
     line-height: 140%;
@@ -72,6 +72,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor:pointer;
 }
 
 .secondary{

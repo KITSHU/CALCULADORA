@@ -16,7 +16,7 @@
         <div id="lastcalc"></div>
         <div id="result">
             <img src="./assets/equals.svg" alt="sinal de igual">
-            <span id="numero"></span>
+            <div id="numero"></div>
         </div>
     </div>
     <div id="keyboard">
@@ -71,7 +71,7 @@
         function calcular(){
             var lastcalc = document.getElementById('lastcalc').innerHTML;
             if(lastcalc){
-                document.getElementById('numero').innerHTML = eval(numero)
+                document.getElementById('numero').innerHTML = eval (lastcalc)
             }
             else{
                 document.getElementById('lastcalc').innerHTML = "Nada para calcular"
